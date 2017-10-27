@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{siunitx,subcaption}
+\usepackage{amsmath,xfrac, bm, amssymb}
+\usepackage[margin = 1in]{geometry}
+\usepackage{tabularx}
+\usepackage[numbered]{matlab-prettifier}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\title{Assignment 1}
+\author{Jonathan Hornholt\\ \textit{s143364}}
+\date{\today}
+
+% Frieze
+\usepackage{eso-pic}
+\newcommand{\frieze}{%
+    \AddToShipoutPicture*{
+        \put(-238, 40){
+            \parbox[b][\paperheight]{\paperwidth}{%
+                \includegraphics[scale=0.75]{fig/dtu/dtu_frise}
+                \vspace*{71pt}
+            }
+        }
+    }
+}
+
+% Forside
+\usepackage{tabularx}
+% \usepackage[footskip = 25mm]{geometry}
+    
+\begin{document}
+    \pagenumbering{Roman}
+	\newgeometry{top=91pt,bottom=92pt}
+	\input{tex/frontpage.tex}
+	\restoregeometry
+    \thispagestyle{plain}
+    \frieze
+    \tableofcontents
+    \clearpage
+    
+    \pagenumbering{arabic}
+
+    \input{tex/intro.tex}
+    \input{tex/theory.tex}
+    \input{tex/problem.tex}
+    \input{tex/results.tex}
+    \input{tex/discussion.tex}
+    \input{tex/conclusion.tex}
+    \clearpage
+    \input{tex/appendix.tex}
+
+\end{document}
